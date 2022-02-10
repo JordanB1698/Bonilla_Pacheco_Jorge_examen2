@@ -21,7 +21,7 @@
           name="nombre"
           type="text"
           placeholder="nombres"
-          [(ngModel)]="nombres"
+          [(ngModel)]="cliente.nombreCliente"
           required
         ></ion-input>
       </ion-item>
@@ -31,7 +31,7 @@
           name="apellidos"
           type="text"
           placeholder="apellidos"
-          [(ngModel)]="apellidos"
+          [(ngModel)]="cliente.apellidoCliente"
           required
         ></ion-input>
       </ion-item>
@@ -42,7 +42,7 @@
           name="email"
           type="email"
           placeholder="email"
-          [(ngModel)]="email"
+          [(ngModel)]="cliente.email"
           required
         ></ion-input>
       </ion-item>
@@ -53,12 +53,12 @@
           name="password"
           type="password"
           placeholder="password"
-          [(ngModel)]="pass"
+          [(ngModel)]="cliente.password"
           required
         ></ion-input>
       </ion-item>
 
-      <ion-button (click)="registrars()" expand="block" type="submit" color="success" shape="round">
+      <ion-button (click)="registrar()" expand="block" type="submit" color="success" shape="round">
         Registrar
       </ion-button>
 <br>

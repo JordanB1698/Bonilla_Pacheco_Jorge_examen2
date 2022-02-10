@@ -38,6 +38,18 @@ export class ClienteServiceBJService {
     toast.present();
   }
 
+  async Registrar(c: Cliente) {
+    return await new Promise(resolve => {
+      this.http.post<Cliente>(`${this.url}/auth`, c).subscribe(data => {
+        
+        resolve(true);
+      }, error => {
+        this.presentToast(error.message);
+      });
+
+    });    
+  }
+
   async Login(c: Cliente) {
     return await new Promise(resolve => {
       this.http.post<Cliente>(`${this.url}/auth/login`, c).subscribe(data => {
