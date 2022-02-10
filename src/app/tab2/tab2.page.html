@@ -10,13 +10,11 @@
   <ion-list>
   
     <ion-item *ngFor="let c of facturas; let indice = index">
-      <ion-avatar slot="start">
-        <img src="http://apirestfactura.somee.com/API/api/Producto/{{c.image}}" />
-      </ion-avatar>
+      <p slot="start">{{indice + 1}}</p>
       <ion-label>
-        <h2>{{c.producto1}}</h2>
-        <h3>precio: $ {{c.precio}}</h3>
-        <p>Stock: {{c.stock}}</p>
+        <h2>{{c.cliente}}</h2>
+        <h3>Total: $ {{c.total}}</h3>
+        <p>SubTotal: {{c.subtotal}}</p>
       </ion-label>
     </ion-item>
     

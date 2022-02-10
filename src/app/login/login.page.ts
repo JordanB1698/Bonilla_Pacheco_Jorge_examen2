@@ -54,8 +54,8 @@ export class LoginPage implements OnInit {
   }
  
   registrarse(){
-
-    this.navCtrl.navigateRoot('/main/tabs/tab1');
+    
+    this.navCtrl.navigateRoot('/registrar');
   }
 
 

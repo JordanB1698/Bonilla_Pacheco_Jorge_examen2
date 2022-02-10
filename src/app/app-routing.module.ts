@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
     pathMatch:'full'
   },
+  
+  {
+    path: 'registrar',
+    loadChildren: () => import('./registrar/registrar.module').then( m => m.RegistrarPageModule)
+  },
   {
     path: 'main',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
@@ -14,10 +19,6 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'login'
-  },
-  {
-    path: 'registrar',
-    loadChildren: () => import('./registrar/registrar.module').then( m => m.RegistrarPageModule)
   }
 ];
 @NgModule({
