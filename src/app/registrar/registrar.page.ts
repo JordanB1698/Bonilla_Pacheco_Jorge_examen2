@@ -22,27 +22,40 @@ export class RegistrarPage implements OnInit {
 
   async registrar(){
 
-    if (this.cliente.cedRucCliente.length <= 10){
+    if (this.cliente.cedRucCliente.length < 10){
       this.presentToast('Cedula debe tener 10 caracteres');
+      console.log(this.cliente)
+
       return;
     }
+
+  
     if (this.cliente.nombreCliente.length < 3){
       this.presentToast('Nombre Incorrecto');
+      console.log(this.cliente)
       return;
     }
+
+   
 
     if (this.cliente.apellidoCliente.length < 3){
       this.presentToast('Apellido Incorrecto');
+      console.log(this.cliente)
       return;
     }
+    
 
     if (this.cliente.email.length < 3){
       this.presentToast('Email Incorrecto');
+      console.log(this.cliente)
+
       return;
     }
 
     if (this.cliente.password.length <6|| this.cliente.password.length > 10){
       this.presentToast('Passwrod debe tener 10 caracteres');
+      console.log(this.cliente)
+
       return;
     }
 
@@ -67,7 +80,7 @@ export class RegistrarPage implements OnInit {
   login(){
     this.cliente.cedRucCliente
     
-    this.navCtrl.navigateRoot('/registrar');
+    this.navCtrl.navigateRoot('/login');
   }
 
 }

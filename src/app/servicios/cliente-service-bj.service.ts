@@ -39,8 +39,9 @@ export class ClienteServiceBJService {
   }
 
   async Registrar(c: Cliente) {
+    console.log(c)
     return await new Promise(resolve => {
-      this.http.post<Cliente>(`${this.url}/auth`, c).subscribe(data => {
+      this.http.post<Cliente>(`http://apirestfactura.somee.com/API/api/auth`, c).subscribe(data => {
         
         resolve(true);
       }, error => {

@@ -40,7 +40,7 @@
         <ion-label color="dark" position="floating">Email</ion-label>
         <ion-input
           name="email"
-          type="email"
+          type="text"
           placeholder="email"
           [(ngModel)]="cliente.email"
           required
@@ -58,12 +58,12 @@
         ></ion-input>
       </ion-item>
 
-      <ion-button (click)="registrar()" expand="block" type="submit" color="success" shape="round">
+      <ion-button (click)="registrar()" expand="block" type="submit" color="primary" shape="round">
         Registrar
       </ion-button>
 <br>
 <br>
-      <ion-button (click)="login()" expand="block" type="submit" color="success" shape="round">
+      <ion-button (click)="login()" expand="block"  color="success" shape="round">
         Login
       </ion-button>
     </div>
