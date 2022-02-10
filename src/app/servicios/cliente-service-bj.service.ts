@@ -43,9 +43,12 @@ export class ClienteServiceBJService {
     console.log(c)
     const httpOptions = {
       headers: new HttpHeaders({ 
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Headers':'Content-Type',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Methods': 'GET,POST'
       })
     };
+    
     return await new Promise(resolve => {
       this.http.post<Cliente>(`http://apirestfactura.somee.com/API/api/auth`, c, httpOptions).subscribe(data => {
         
