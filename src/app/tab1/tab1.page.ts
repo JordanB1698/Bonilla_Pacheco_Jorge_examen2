@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Producto } from '../Clases/clases';
+import { ProductoServiceService } from '../servicios/producto-service.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,22 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private productoService:ProductoServiceService) {}
 
+  productos:Producto[] = [];
+
+  ngOnInit() {
+    this.getProductos();
+    console.log('jola')
+  }
+
+  
+  getProductos(){
+    this.productoService.getProductos().subscribe(data=>{
+      this.productos = data;
+      console.log(data)
+    }, error=>{
+      console.log(error.message)
+    })
+  }
 }

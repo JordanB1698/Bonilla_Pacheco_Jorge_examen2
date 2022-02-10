@@ -9,14 +9,14 @@
 <ion-content [fullscreen]="true">
   <ion-list>
   
-    <ion-item>
+    <ion-item *ngFor="let c of productos; let indice = index">
       <ion-avatar slot="start">
         <img src="./avatar-finn.png" />
       </ion-avatar>
       <ion-label>
-        <h2>Finn</h2>
-        <h3>I'm a big deal</h3>
-        <p>Listen, I've had a pretty messed up day...</p>
+        <h2>{{c.producto1}}</h2>
+        <h3>precio: $ {{c.precio}}}}</h3>
+        <p>Stock: {{c.stock}}</p>
       </ion-label>
     </ion-item>
     
