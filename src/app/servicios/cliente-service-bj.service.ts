@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Cliente } from '../Clases/clases';
 import { ToastController } from '@ionic/angular';
@@ -38,10 +38,16 @@ export class ClienteServiceBJService {
     toast.present();
   }
 
+  
   async Registrar(c: Cliente) {
     console.log(c)
+    const httpOptions = {
+      headers: new HttpHeaders({ 
+        'Access-Control-Allow-Origin':'*'
+      })
+    };
     return await new Promise(resolve => {
-      this.http.post<Cliente>(`http://apirestfactura.somee.com/API/api/auth`, c).subscribe(data => {
+      this.http.post<Cliente>(`http://apirestfactura.somee.com/API/api/auth`, c, httpOptions).subscribe(data => {
         
         resolve(true);
       }, error => {
