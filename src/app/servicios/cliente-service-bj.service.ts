@@ -39,13 +39,13 @@ export class ClienteServiceBJService {
 
   async Login(c: Cliente) {
     return await new Promise(resolve => {
-      this.http.post<Cliente>(`${this.url}/conductor/login`, c).subscribe(data => {
+      this.http.post<Cliente>(`${this.url}/auth/login`, c).subscribe(data => {
         if (data === null) {
           this.presentToast("Usuario y contraseña incorrectos");
           resolve(false);
         }
         //console.log(data)
-        this.set('conductor', data);
+        this.set('cliente', data);
         resolve(true);
       }, error => {
         this.presentToast(error.message);

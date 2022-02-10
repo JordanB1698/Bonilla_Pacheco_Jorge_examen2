@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
 import {  Cliente } from '../Clases/clases';
+import { ClienteServiceBJService } from '../servicios/cliente-service-bj.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,9 @@ import {  Cliente } from '../Clases/clases';
 export class LoginPage implements OnInit {
 
   constructor(private router: Router,
-    private toastCtrl:ToastController){}
-    //private clienteService: ClienteService) { }
+    private toastCtrl:ToastController,
+    private clienteService: ClienteServiceBJService){}
+    
 
   email:string="";
   pass:string="";
