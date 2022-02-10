@@ -1,17 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Facturas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+  
+    <ion-item *ngFor="let c of facturas; let indice = index">
+      <ion-avatar slot="start">
+        <img src="http://apirestfactura.somee.com/API/api/Producto/{{c.image}}" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{c.producto1}}</h2>
+        <h3>precio: $ {{c.precio}}</h3>
+        <p>Stock: {{c.stock}}</p>
+      </ion-label>
+    </ion-item>
+    
+  </ion-list>
 </ion-content>

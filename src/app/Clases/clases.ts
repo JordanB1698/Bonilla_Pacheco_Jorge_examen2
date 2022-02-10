@@ -22,3 +22,20 @@ export class Producto {
     image?: string;
     estado?: number;
 }
+
+
+export class Factura {
+    num: number;
+    id_Fact: number;
+    fecha: Date;
+    id_Cliente: number;
+    cliente: string;
+    total: number;
+    subtotal: number;
+    iva: number;
+}
+
+export class ResponseModel {
+    mensaje?: any;
+    info: any[];
+}

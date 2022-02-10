@@ -15,7 +15,7 @@ export class Tab1Page {
 
   ngOnInit() {
     this.getProductos();
-    console.log('jola')
+    
   }
 
   

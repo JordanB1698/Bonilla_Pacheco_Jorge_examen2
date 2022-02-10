@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Factura, ResponseModel } from '../Clases/clases';
+import { FacturaserviceService } from '../servicios/facturaservice.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,22 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private facturaService:  FacturaserviceService) {}
+  response:ResponseModel;
+  facturas:Factura[] = [];
+  ngOnInit() {
+    this.getFacturas();
+    
+  }
 
+  
+  getFacturas(){
+    this.facturaService.getFactura().subscribe(data=>{
+      this.response = data;
+      this.facturas=this.response.info;
+      console.log(data)
+    }, error=>{
+      console.log(error.message)
+    })
+  }
 }
