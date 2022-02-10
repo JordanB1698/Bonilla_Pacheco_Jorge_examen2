@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 
 import {  Cliente } from '../Clases/clases';
 import { ClienteServiceBJService } from '../servicios/cliente-service-bj.service';
@@ -12,13 +12,13 @@ import { ClienteServiceBJService } from '../servicios/cliente-service-bj.service
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router,
+  constructor(private navCtrl:NavController,
     private toastCtrl:ToastController,
     private clienteService: ClienteServiceBJService){}
     
 
-  email:string="";
-  pass:string="";
+  email:string="aaa@gmail.com";
+  pass:string="Password";
 
   ngOnInit() {
   }
@@ -45,9 +45,9 @@ export class LoginPage implements OnInit {
     cliente.email = this.email;
     cliente.password = this.pass;
 
-    //const valid = await this.c.Login(conductor);
+    const valid = await this.clienteService.Login(cliente);
     if(true){
-      this.router.navigate(['/tab1']);
+      this.navCtrl.navigateRoot('/main/tabs/tab1');
     }
 
 
@@ -55,7 +55,7 @@ export class LoginPage implements OnInit {
  
   registrarse(){
 
-    this.router.navigate(['/registrar-usuario']);
+    this.navCtrl.navigateRoot('/main/tabs/tab1');
   }
 
 
