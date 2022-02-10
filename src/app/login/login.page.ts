@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular/providers/toast-controller';
+import { ToastController } from '@ionic/angular';
+
 import {  Cliente } from '../Clases/clases';
 
 @Component({
